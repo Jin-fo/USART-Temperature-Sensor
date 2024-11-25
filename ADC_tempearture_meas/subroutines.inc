@@ -1,5 +1,5 @@
 .dseg
-post_home: .db "ESE280 Fall 2024", 0x0D, 0x0A, "Jin", 0x0D, 0x0A, "Laboratory 10", 0x0D, 0x0A, "Temperature Sensor", 0x00//next line
+post_home: .db "ESE280 Fall 2024", 0x0D, 0x0A, "Jin", 0x0D, 0x0A, "Laboratory 10", 0x0D, 0x0A, "Temperature Sensor", 0x00		//next line
 
 dLOW:  .byte 1
 dHIGH: .byte 1
@@ -11,6 +11,7 @@ dDec4: .byte 1
 dDec5: .byte 1
 
 .cseg
+
 //---Subtrotine---//
 
 ;***************************************************************************
@@ -66,20 +67,18 @@ clear_screen:
 ;***************************************************************************
 display_post_home:
 	//insert code here
-	clear:
-		ldi ZH, high(post_home)
-		ldi ZL, LOW(post_home)
+	ldi ZL, LOW(post_home * 2)
+	ldi ZH, HIGH(post_home * 2)
 
-	start_write:
-		lpm r16, Z+
-		tst r16
-		breq end_write
-		mov r20, r16
-		rcall USART_TX
-		rjmp start_write
+	send:
+	lpm r20, Z+
+	cpi r20, 0x00
+	breq end 
+	rcall USART_TX
+	rjmp send
 
-	end_write:
-		ret
+	end:
+	ret
 
 ;***************************************************************************
 ;* 
