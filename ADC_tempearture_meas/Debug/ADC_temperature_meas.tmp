@@ -1,19 +1,19 @@
 <ASSEMBLER_INFO>
  <VERSION>2.2.8</VERSION>
  <DEVICE>"AVR128DB48"</DEVICE>
- <WORKING_DIR>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\Debug</WORKING_DIR>
+ <WORKING_DIR>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc</FILE>
-  <FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE>
+  <FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\Debug\ADC_temperature_meas.obj</FILE>
+  <FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\Debug\ADC_temperature_meas.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>ADC_temperature_meas.hex</FILE>
@@ -23,54 +23,54 @@
   <FILE>ADC_temperature_meas.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <initialize><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>22</LINE></initialize>
-  <main><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>62</LINE></main>
-  <clear_screen><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>39</LINE></clear_screen>
-  <display_post_home><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>68</LINE></display_post_home>
-  <delay_1s><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>513</LINE></delay_1s>
-  <get_data><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>71</LINE></get_data>
-  <start_convert><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>74</LINE></start_convert>
-  <check_convert><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>78</LINE></check_convert>
-  <to_voltage_2500><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>105</LINE></to_voltage_2500>
-  <push_data><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>165</LINE></push_data>
-  <pull_data><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>192</LINE></pull_data>
-  <display_bin><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>133</LINE></display_bin>
-  <next_line><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>314</LINE></next_line>
-  <display_hex><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>190</LINE></display_hex>
-  <display_dec><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>235</LINE></display_dec>
-  <display_tem><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>292</LINE></display_tem>
-  <USART_TX><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>342</LINE></USART_TX>
-  <write_bit_H><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>144</LINE></write_bit_H>
-  <write_bit_L><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>156</LINE></write_bit_L>
-  <write_most_bit><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>219</LINE></write_most_bit>
-  <write_least_bit><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>251</LINE></write_least_bit>
-  <bin16_to_BCD><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>420</LINE></bin16_to_BCD>
-  <dDec5><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>11</LINE></dDec5>
-  <dDec4><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>10</LINE></dDec4>
-  <dDec3><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>9</LINE></dDec3>
-  <dDec2><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>8</LINE></dDec2>
-  <dDec1><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>7</LINE></dDec1>
-  <overflow><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>310</LINE></overflow>
-  <write_decimal><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm</FILE><LINE>318</LINE></write_decimal>
-  <post_home><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>2</LINE></post_home>
-  <dLOW><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>4</LINE></dLOW>
-  <dHIGH><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>5</LINE></dHIGH>
-  <send><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>73</LINE></send>
-  <end><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>80</LINE></end>
-  <mpy16u><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>377</LINE></mpy16u>
-  <loop><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>113</LINE></loop>
-  <to_voltage_5><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>124</LINE></to_voltage_5>
-  <loop1><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>132</LINE></loop1>
-  <to_ASCII><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>280</LINE></to_ASCII>
-  <concat_x4><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>287</LINE></concat_x4>
-  <concat_x3><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>283</LINE></concat_x3>
-  <m16u_1><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>384</LINE></m16u_1>
-  <noad8><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>388</LINE></noad8>
-  <div16u><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>468</LINE></div16u>
-  <d16u_1><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>472</LINE></d16u_1>
-  <d16u_2><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>478</LINE></d16u_2>
-  <d16u_3><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>488</LINE></d16u_3>
-  <outer_loop><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>516</LINE></outer_loop>
-  <inner_loop><FILE>C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc</FILE><LINE>518</LINE></inner_loop>
+  <initialize><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>22</LINE></initialize>
+  <main><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>62</LINE></main>
+  <clear_screen><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>37</LINE></clear_screen>
+  <display_post_home><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>66</LINE></display_post_home>
+  <delay_1s><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>511</LINE></delay_1s>
+  <get_data><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>70</LINE></get_data>
+  <start_convert><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>73</LINE></start_convert>
+  <check_convert><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>77</LINE></check_convert>
+  <to_voltage_2500><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>103</LINE></to_voltage_2500>
+  <push_data><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>163</LINE></push_data>
+  <pull_data><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>190</LINE></pull_data>
+  <display_bin><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>132</LINE></display_bin>
+  <next_line><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>312</LINE></next_line>
+  <display_hex><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>189</LINE></display_hex>
+  <display_dec><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>234</LINE></display_dec>
+  <display_tem><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>291</LINE></display_tem>
+  <USART_TX><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>340</LINE></USART_TX>
+  <write_bit_H><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>143</LINE></write_bit_H>
+  <write_bit_L><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>155</LINE></write_bit_L>
+  <write_most_bit><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>217</LINE></write_most_bit>
+  <write_least_bit><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>249</LINE></write_least_bit>
+  <bin16_to_BCD><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>418</LINE></bin16_to_BCD>
+  <dDec5><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>9</LINE></dDec5>
+  <dDec4><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>8</LINE></dDec4>
+  <dDec3><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>7</LINE></dDec3>
+  <dDec2><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>6</LINE></dDec2>
+  <dDec1><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>5</LINE></dDec1>
+  <overflow><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>309</LINE></overflow>
+  <write_decimal><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm</FILE><LINE>317</LINE></write_decimal>
+  <dLOW><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>2</LINE></dLOW>
+  <dHIGH><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>3</LINE></dHIGH>
+  <post_home><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>12</LINE></post_home>
+  <send><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>71</LINE></send>
+  <end><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>78</LINE></end>
+  <mpy16u><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>375</LINE></mpy16u>
+  <loop><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>111</LINE></loop>
+  <to_voltage_5><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>122</LINE></to_voltage_5>
+  <loop1><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>130</LINE></loop1>
+  <to_ASCII><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>278</LINE></to_ASCII>
+  <concat_x4><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>285</LINE></concat_x4>
+  <concat_x3><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>281</LINE></concat_x3>
+  <m16u_1><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>382</LINE></m16u_1>
+  <noad8><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>386</LINE></noad8>
+  <div16u><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>466</LINE></div16u>
+  <d16u_1><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>470</LINE></d16u_1>
+  <d16u_2><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>476</LINE></d16u_2>
+  <d16u_3><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>486</LINE></d16u_3>
+  <outer_loop><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>514</LINE></outer_loop>
+  <inner_loop><FILE>F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc</FILE><LINE>516</LINE></inner_loop>
  </LABELS>
 </ASSEMBLER_INFO>

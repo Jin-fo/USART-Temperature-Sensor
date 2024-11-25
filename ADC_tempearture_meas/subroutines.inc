@@ -1,6 +1,4 @@
 .dseg
-post_home: .db "ESE280 Fall 2024", 0x0D, 0x0A, "Jin", 0x0D, 0x0A, "Laboratory 10", 0x0D, 0x0A, "Temperature Sensor", 0x00		//next line
-
 dLOW:  .byte 1
 dHIGH: .byte 1
 
@@ -11,7 +9,7 @@ dDec4: .byte 1
 dDec5: .byte 1
 
 .cseg
-
+post_home: .db "  ESE280 Fall 2024", 0x0D, 0x0A, "     Name: Jin", 0x0D, 0x0A, "   Laboratory 10", 0x0D, 0x0A, " Temperature Sensor", 0x00
 //---Subtrotine---//
 
 ;***************************************************************************

@@ -66,7 +66,6 @@ main:
 ;display_post_home
 	rcall display_post_home
 	rcall delay_1s
-
 ;re-display clear_screen
 	get_data:
 		rcall clear_screen

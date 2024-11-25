@@ -1,28 +1,28 @@
 
-AVRASM ver. 2.2.8  C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm Mon Nov 25 00:25:06 2024
+AVRASM ver. 2.2.8  F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm Mon Nov 25 12:51:09 2024
 
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc'
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): Including file 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc'
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(371): warning: Register r18 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(372): warning: Register r19 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(460): warning: Register r16 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(461): warning: Register r17 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(462): warning: Register r16 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(463): warning: Register r17 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(464): warning: Register r18 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(465): warning: Register r19 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(466): warning: Register r20 already defined by the .DEF directive
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc'
-C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): Including file 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc'
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc'
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): Including file 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc'
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(369): warning: Register r18 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(370): warning: Register r19 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(458): warning: Register r16 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(459): warning: Register r17 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(460): warning: Register r16 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(461): warning: Register r17 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(462): warning: Register r18 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(463): warning: Register r19 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc(464): warning: Register r20 already defined by the .DEF directive
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc' included form here
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc'
+F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\main.asm(341): Including file 'F:\Downloads\USART-Temperature-Sensor-main\USART-Temperature-Sensor-main\ADC_tempearture_meas\subroutines.inc'
                                  
                                  .list
                                  
@@ -85,15 +85,14 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  
                                  main:
                                  ;setup clear_screen
-00001d d087                      	rcall clear_screen
+00001d d0ac                      	rcall clear_screen
                                  
                                  ;display_post_home
-00001e d08b                      	rcall display_post_home
-00001f d104                      	rcall delay_1s
-                                 
+00001e d0b0                      	rcall display_post_home
+00001f d129                      	rcall delay_1s
                                  ;re-display clear_screen
                                  	get_data:
-000020 d084                      		rcall clear_screen
+000020 d0a9                      		rcall clear_screen
                                  ;check_start_convert
                                  	start_convert:
 000021 e001                      		ldi r16, 0x01
@@ -108,28 +107,28 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
 00002a 9110 0611                 		lds r17, ADC0_RESH
                                  
                                  ;Task 3 and Task 4
-00002c d085                      	rcall to_voltage_2500
+00002c d0aa                      	rcall to_voltage_2500
                                  	//rcall to_voltage_5	;~work
                                  
-00002d d09c                      	rcall push_data			;push data[r16L:r17H]
+00002d d0c1                      	rcall push_data			;push data[r16L:r17H]
                                  
-00002e d0a0                      	rcall pull_data
+00002e d0c5                      	rcall pull_data
 00002f d00b                      	rcall display_bin
-000030 d0b7                      	rcall next_line
+000030 d0dc                      	rcall next_line
                                  
-000031 d09d                      	rcall pull_data
+000031 d0c2                      	rcall pull_data
 000032 d021                      	rcall display_hex
-000033 d0b4                      	rcall next_line
+000033 d0d9                      	rcall next_line
                                  
-000034 d09a                      	rcall pull_data
+000034 d0bf                      	rcall pull_data
 000035 d02d                      	rcall display_dec
-000036 d0b1                      	rcall next_line
+000036 d0d6                      	rcall next_line
                                  
                                  ;Task 4
-000037 d097                      	rcall pull_data
+000037 d0bc                      	rcall pull_data
 000038 d04a                      	rcall display_tem
                                  
-000039 d0ea                      	rcall delay_1s
+000039 d10f                      	rcall delay_1s
 00003a cfe5                      	rjmp get_data
                                  
                                  ;***************************************************************************
@@ -157,11 +156,11 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  display_bin:
                                  	//data formate
 00003b e442                      	ldi r20, 'B'
-00003c d0af                      	rcall USART_TX
+00003c d0d4                      	rcall USART_TX
 00003d e449                      	ldi r20, 'I'
-00003e d0ad                      	rcall USART_TX
+00003e d0d2                      	rcall USART_TX
 00003f e34a                      	ldi r20, ':'
-000040 d0ab                      	rcall USART_TX
+000040 d0d0                      	rcall USART_TX
                                  
                                  	//write binary
 000041 e024                      	ldi r18, 4 ;loop control
@@ -171,7 +170,7 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
 000044 fd17                      	sbrc r17, 7
 000045 e341                      	ldi r20, '1'
                                  
-000046 d0a5                      	rcall USART_TX
+000046 d0ca                      	rcall USART_TX
 000047 0f11                      	lsl r17
 000048 952a                      	dec r18
 000049 f7c1                      	brne write_bit_H
@@ -183,7 +182,7 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
 00004d fd07                      	sbrc r16, 7
 00004e e341                      	ldi r20, '1'
                                  
-00004f d09c                      	rcall USART_TX
+00004f d0c1                      	rcall USART_TX
 000050 0f00                      	lsl r16
 000051 952a                      	dec r18
 000052 f7c1                      	brne write_bit_L
@@ -214,24 +213,24 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  display_hex:
                                  	//data formate
 000054 e448                      	ldi r20, 'H'
-000055 d096                      	rcall USART_TX
+000055 d0bb                      	rcall USART_TX
 000056 e748                      	ldi r20, 'x'
-000057 d094                      	rcall USART_TX
+000057 d0b9                      	rcall USART_TX
 000058 e34a                      	ldi r20, ':'
-000059 d092                      	rcall USART_TX
+000059 d0b7                      	rcall USART_TX
                                  
                                  	//write hex
 00005a 2f31                      	mov r19, r17				;r19(msig-HIGH-bit)
 00005b 2f21                      	mov r18, r17				;r18(lsig-HIGH-bit)
                                  
-00005c d077                      	rcall write_most_bit
-00005d d07e                      	rcall write_least_bit
+00005c d09c                      	rcall write_most_bit
+00005d d0a3                      	rcall write_least_bit
                                  
 00005e 2f30                      	mov r19, r16
 00005f 2f20                      	mov r18, r16
                                  
-000060 d073                      	rcall write_most_bit
-000061 d07a                      	rcall write_least_bit
+000060 d098                      	rcall write_most_bit
+000061 d09f                      	rcall write_least_bit
 000062 9508                      	ret
                                  
                                  ;***************************************************************************
@@ -259,36 +258,36 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  display_dec:
                                  	//data format
 000063 e546                      	ldi r20, 'V'
-000064 d087                      	rcall USART_TX
+000064 d0ac                      	rcall USART_TX
 000065 e64f                      	ldi r20, 'o'
-000066 d085                      	rcall USART_TX
+000066 d0aa                      	rcall USART_TX
 000067 e34a                      	ldi r20, ':'
-000068 d083                      	rcall USART_TX
+000068 d0a8                      	rcall USART_TX
                                  
-000069 d098                      	rcall bin16_to_BCD
+000069 d0bd                      	rcall bin16_to_BCD
 00006a 2f28                      	mov r18, r24				;digit 5th
-00006b d070                      	rcall write_least_bit		
-00006c 9340 403f                 	sts dDec5, r20
+00006b d095                      	rcall write_least_bit		
+00006c 9340 4006                 	sts dDec5, r20
                                  
 00006e 2f37                      	mov r19, r23				;digit 4th
 00006f 2f27                      	mov r18, r23				;digit 3th
-000070 d063                      	rcall write_most_bit
-000071 9340 403e                 	sts dDec4, r20
-000073 d068                      	rcall write_least_bit
-000074 9340 403d                 	sts dDec3, r20
+000070 d088                      	rcall write_most_bit
+000071 9340 4005                 	sts dDec4, r20
+000073 d08d                      	rcall write_least_bit
+000074 9340 4004                 	sts dDec3, r20
                                  
 000076 2f36                      	mov r19, r22				;digit 2th
 000077 2f26                      	mov r18, r22				;digit 1th
-000078 d05b                      	rcall write_most_bit
-000079 9340 403c                 	sts dDec2, r20
-00007b d060                      	rcall write_least_bit
-00007c 9340 403b                 	sts dDec1, r20
+000078 d080                      	rcall write_most_bit
+000079 9340 4003                 	sts dDec2, r20
+00007b d085                      	rcall write_least_bit
+00007c 9340 4002                 	sts dDec1, r20
                                  
                                  	//units
 00007e e64d                      	ldi r20, 'm'
-00007f d06c                      	rcall USART_TX
+00007f d091                      	rcall USART_TX
 000080 e546                      	ldi r20, 'V'
-000081 d06a                      	rcall USART_TX
+000081 d08f                      	rcall USART_TX
 000082 9508                      	ret
                                  
                                  ;***************************************************************************
@@ -315,11 +314,11 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;***************************************************************************
                                  display_tem:
 000083 e544                      	ldi r20, 'T'
-000084 d067                      	rcall USART_TX
+000084 d08c                      	rcall USART_TX
 000085 e64d                      	ldi r20, 'm'
-000086 d065                      	rcall USART_TX
+000086 d08a                      	rcall USART_TX
 000087 e34a                      	ldi r20, ':'
-000088 d063                      	rcall USART_TX
+000088 d088                      	rcall USART_TX
                                  //voltage offset in binary
 000089 ef24                      	ldi r18, LOW(500)
 00008a e031                      	ldi r19, HIGH(500)
@@ -333,107 +332,85 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  	//check negative
                                  overflow:
 00008f e24d                      	ldi r20, 0x2D
-000090 d05b                      	rcall USART_TX
+000090 d080                      	rcall USART_TX
 000091 9500                      	com r16
 000092 e021                      	ldi r18, 1
 000093 1f02                      	adc r16, r18
 000094 9510                      	com r17
                                  
                                  write_decimal:
-000095 d06c                      	rcall bin16_to_BCD
+000095 d091                      	rcall bin16_to_BCD
 000096 2f28                      	mov r18, r24				;digit 5th
-000097 d044                      	rcall write_least_bit		
+000097 d069                      	rcall write_least_bit		
                                  
 000098 2f37                      	mov r19, r23				;digit 4th
 000099 2f27                      	mov r18, r23				;digit 3th
-00009a d039                      	rcall write_most_bit
-00009b d040                      	rcall write_least_bit
+00009a d05e                      	rcall write_most_bit
+00009b d065                      	rcall write_least_bit
                                  
 00009c 2f36                      	mov r19, r22				;digit 2th
 00009d 2f26                      	mov r18, r22				;digit 1th
-00009e d035                      	rcall write_most_bit
+00009e d05a                      	rcall write_most_bit
                                  
                                  	//decimal point
 00009f e24e                      	ldi r20, 0x2E
-0000a0 d04b                      	rcall USART_TX
+0000a0 d070                      	rcall USART_TX
                                  
-0000a1 d03a                      	rcall write_least_bit
+0000a1 d05f                      	rcall write_least_bit
                                  	//units
 0000a2 e443                      	ldi r20, 0x43
-0000a3 d048                      	rcall USART_TX
+0000a3 d06d                      	rcall USART_TX
 0000a4 9508                      	ret
                                  
                                  .include "subroutines.inc"
                                  
-004000 45
-004001 53
-004002 45
-004003 32
-004004 38
-004005 30
-004006 20
-004007 46
-004008 61
-004009 6c
-00400a 6c
-00400b 20
-00400c 32
-00400d 30
-00400e 32
-00400f 34
-004010 0d
-004011 0a
-004012 4a
-004013 69
-004014 6e
-004015 0d
-004016 0a
-004017 4c
-004018 61
-004019 62
-00401a 6f
-00401b 72
-00401c 61
-00401d 74
-00401e 6f
-00401f 72
-004020 79
-004021 20
-004022 31
-004023 30
-004024 0d
-004025 0a
-004026 54
-004027 65
-004028 6d
-004029 70
-00402a 65
-00402b 72
-00402c 61
-00402d 74
-00402e 75
-00402f 72
-004030 65
-004031 20
-004032 53
-004033 65
-004034 6e
-004035 73
-004036 6f
-004037 72
-004038 00                        post_home: .db "ESE280 Fall 2024", 0x0D, 0x0A, "Jin", 0x0D, 0x0A, "Laboratory 10", 0x0D, 0x0A, "Temperature Sensor", 0x00		//next line
+004000                           dLOW:  .byte 1
+004001                           dHIGH: .byte 1
                                  
-004039                           dLOW:  .byte 1
-00403a                           dHIGH: .byte 1
-                                 
-00403b                           dDec1: .byte 1
-00403c                           dDec2: .byte 1
-00403d                           dDec3: .byte 1
-00403e                           dDec4: .byte 1
-00403f                           dDec5: .byte 1
+004002                           dDec1: .byte 1
+004003                           dDec2: .byte 1
+004004                           dDec3: .byte 1
+004005                           dDec4: .byte 1
+004006                           dDec5: .byte 1
                                  
                                  .cseg
-                                 
+0000a5 2020
+0000a6 5345
+0000a7 3245
+0000a8 3038
+0000a9 4620
+0000aa 6c61
+0000ab 206c
+0000ac 3032
+0000ad 3432
+0000ae 0a0d
+0000af 2020
+0000b0 2020
+0000b1 4e20
+0000b2 6d61
+0000b3 3a65
+0000b4 4a20
+0000b5 6e69
+0000b6 0a0d
+0000b7 2020
+0000b8 4c20
+0000b9 6261
+0000ba 726f
+0000bb 7461
+0000bc 726f
+0000bd 2079
+0000be 3031
+0000bf 0a0d
+0000c0 5420
+0000c1 6d65
+0000c2 6570
+0000c3 6172
+0000c4 7574
+0000c5 6572
+0000c6 5320
+0000c7 6e65
+0000c8 6f73
+0000c9 0072                      post_home: .db "  ESE280 Fall 2024", 0x0D, 0x0A, "     Name: Jin", 0x0D, 0x0A, "   Laboratory 10", 0x0D, 0x0A, " Temperature Sensor", 0x00
                                  //---Subtrotine---//
                                  
                                  ;***************************************************************************
@@ -459,11 +436,11 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  clear_screen:
-0000a5 e74c                      	ldi r20, '|'
-0000a6 d045                      	rcall USART_TX
-0000a7 e24d                      	ldi r20, '-'
-0000a8 d043                      	rcall USART_TX
-0000a9 9508                      	ret
+0000ca e74c                      	ldi r20, '|'
+0000cb d045                      	rcall USART_TX
+0000cc e24d                      	ldi r20, '-'
+0000cd d043                      	rcall USART_TX
+0000ce 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -489,18 +466,18 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;***************************************************************************
                                  display_post_home:
                                  	//insert code here
-0000aa e0e0                      	ldi ZL, LOW(post_home * 2)
-0000ab e8f0                      	ldi ZH, HIGH(post_home * 2)
+0000cf e4ea                      	ldi ZL, LOW(post_home * 2)
+0000d0 e0f1                      	ldi ZH, HIGH(post_home * 2)
                                  
                                  	send:
-0000ac 9145                      	lpm r20, Z+
-0000ad 3040                      	cpi r20, 0x00
-0000ae f011                      	breq end 
-0000af d03c                      	rcall USART_TX
-0000b0 cffb                      	rjmp send
+0000d1 9145                      	lpm r20, Z+
+0000d2 3040                      	cpi r20, 0x00
+0000d3 f011                      	breq end 
+0000d4 d03c                      	rcall USART_TX
+0000d5 cffb                      	rjmp send
                                  
                                  	end:
-0000b1 9508                      	ret
+0000d6 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -525,42 +502,42 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  to_voltage_2500: 
-0000b2 ec24                      	ldi r18, LOW(2500)
-0000b3 e039                      	ldi r19, HIGH(2500)
-0000b4 d03e                      	rcall mpy16u			//use 24-bits or 3-bytes i.e r21 is empty
+0000d7 ec24                      	ldi r18, LOW(2500)
+0000d8 e039                      	ldi r19, HIGH(2500)
+0000d9 d03e                      	rcall mpy16u			//use 24-bits or 3-bytes i.e r21 is empty
                                  		
                                  	//12 right shift by ignoring r18 + 4 right shift
-0000b5 9488                      	clc
-0000b6 e024                      	ldi r18, 4
+0000da 9488                      	clc
+0000db e024                      	ldi r18, 4
                                  	loop:
-0000b7 9546                      	lsr r20
-0000b8 9537                      	ror r19
-0000b9 952a                      	dec r18
-0000ba f7e1                      	brne loop
+0000dc 9546                      	lsr r20
+0000dd 9537                      	ror r19
+0000de 952a                      	dec r18
+0000df f7e1                      	brne loop
                                  
-0000bb 2f03                      	mov r16, r19
-0000bc 2f14                      	mov r17, r20
+0000e0 2f03                      	mov r16, r19
+0000e1 2f14                      	mov r17, r20
                                  
-0000bd 9508                      	ret
+0000e2 9508                      	ret
                                  
                                  to_voltage_5: //in V
-0000be e025                      	ldi r18, LOW(5)
-0000bf e030                      	ldi r19, HIGH(5)
-0000c0 d032                      	rcall mpy16u //
+0000e3 e025                      	ldi r18, LOW(5)
+0000e4 e030                      	ldi r19, HIGH(5)
+0000e5 d032                      	rcall mpy16u //
                                  
-0000c1 9488                      	clc
+0000e6 9488                      	clc
                                  	//not sure why shift 3 times, got by testing
-0000c2 e043                      	ldi r20, 3
+0000e7 e043                      	ldi r20, 3
                                  	loop1:
-0000c3 9536                      	lsr r19
-0000c4 9527                      	ror r18
-0000c5 954a                      	dec r20
-0000c6 f7e1                      	brne loop1
+0000e8 9536                      	lsr r19
+0000e9 9527                      	ror r18
+0000ea 954a                      	dec r20
+0000eb f7e1                      	brne loop1
                                  
                                  	//result voltage stored
-0000c7 2f02                      	mov r16, r18
-0000c8 2f13                      	mov r17, r19
-0000c9 9508                      	ret
+0000ec 2f02                      	mov r16, r18
+0000ed 2f13                      	mov r17, r19
+0000ee 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -585,9 +562,9 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  push_data:
-0000ca 9300 4039                 	sts dLOW,  r16
-0000cc 9310 403a                 	sts dHIGH, r17
-0000ce 9508                      	ret
+0000ef 9300 4000                 	sts dLOW,  r16
+0000f1 9310 4001                 	sts dHIGH, r17
+0000f3 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -612,9 +589,9 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  pull_data:
-0000cf 9100 4039                 	lds r16,  dLOW
-0000d1 9110 403a                 	lds r17, dHIGH
-0000d3 9508                      	ret
+0000f4 9100 4000                 	lds r16,  dLOW
+0000f6 9110 4001                 	lds r17, dHIGH
+0000f8 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -639,14 +616,14 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  write_most_bit:
-0000d4 9536                      	lsr r19
-0000d5 9536                      	lsr r19
-0000d6 9536                      	lsr r19
-0000d7 9536                      	lsr r19
-0000d8 2f43                      	mov r20, r19
-0000d9 d007                      	rcall to_ASCII
-0000da d011                      	rcall USART_TX
-0000db 9508                      	ret
+0000f9 9536                      	lsr r19
+0000fa 9536                      	lsr r19
+0000fb 9536                      	lsr r19
+0000fc 9536                      	lsr r19
+0000fd 2f43                      	mov r20, r19
+0000fe d007                      	rcall to_ASCII
+0000ff d011                      	rcall USART_TX
+000100 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -671,11 +648,11 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  write_least_bit:
-0000dc 702f                      	andi r18, 0x0f
-0000dd 2f42                      	mov r20, r18
-0000de d002                      	rcall to_ASCII
-0000df d00c                      	rcall USART_TX
-0000e0 9508                      	ret
+000101 702f                      	andi r18, 0x0f
+000102 2f42                      	mov r20, r18
+000103 d002                      	rcall to_ASCII
+000104 d00c                      	rcall USART_TX
+000105 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -700,16 +677,16 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  to_ASCII:
-0000e1 304a                      	cpi r20, 10
-0000e2 f410                      	brsh concat_x4
+000106 304a                      	cpi r20, 10
+000107 f410                      	brsh concat_x4
                                  	concat_x3:
-0000e3 6340                      	ori r20, 0x30
-0000e4 9508                      	ret
+000108 6340                      	ori r20, 0x30
+000109 9508                      	ret
                                  
                                  	concat_x4:
-0000e5 6440                      	ori r20, 0x40
-0000e6 5049                      	subi r20, 9
-0000e7 9508                      	ret
+00010a 6440                      	ori r20, 0x40
+00010b 5049                      	subi r20, 9
+00010c 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -734,10 +711,10 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  next_line:
-0000e8 e04d                      	ldi r20, 0x0D //new_line
-0000e9 d002                      	rcall USART_TX
-0000ea e04a                      	ldi r20, 0x0A
-0000eb d000                      	rcall USART_TX
+00010d e04d                      	ldi r20, 0x0D //new_line
+00010e d002                      	rcall USART_TX
+00010f e04a                      	ldi r20, 0x0A
+000110 d000                      	rcall USART_TX
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -762,12 +739,12 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  USART_TX:
-0000ec 9150 0864                 	lds r21, USART3_STATUS
-0000ee ff55                      	sbrs r21, 5
-0000ef cffc                      	rjmp USART_TX
+000111 9150 0864                 	lds r21, USART3_STATUS
+000113 ff55                      	sbrs r21, 5
+000114 cffc                      	rjmp USART_TX
                                  
-0000f0 9340 0862                 	sts USART3_TXDATAL, r20
-0000f2 9508                      	ret
+000115 9340 0862                 	sts USART3_TXDATAL, r20
+000117 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;*
@@ -797,24 +774,24 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  .def mcnt16u =r22 ;loop counter
                                  ;***** Code
                                  mpy16u:
-0000f3 2755                      	clr m16u3 ;clear 2 highest bytes of result
-0000f4 2744                      	clr m16u2
-0000f5 e160                      	ldi mcnt16u,16 ;init loop counter
-0000f6 9536                      	lsr mp16uH
-0000f7 9527                      	ror mp16uL
+000118 2755                      	clr m16u3 ;clear 2 highest bytes of result
+000119 2744                      	clr m16u2
+00011a e160                      	ldi mcnt16u,16 ;init loop counter
+00011b 9536                      	lsr mp16uH
+00011c 9527                      	ror mp16uL
                                  
                                  m16u_1:
-0000f8 f410                      	brcc noad8 ;if bit 0 of multiplier set
-0000f9 0f40                      	add m16u2,mc16uL ;add multiplicand Low to byte 2 of res
-0000fa 1f51                      	adc m16u3,mc16uH ;add multiplicand high to byte 3 of res
+00011d f410                      	brcc noad8 ;if bit 0 of multiplier set
+00011e 0f40                      	add m16u2,mc16uL ;add multiplicand Low to byte 2 of res
+00011f 1f51                      	adc m16u3,mc16uH ;add multiplicand high to byte 3 of res
                                  noad8:
-0000fb 9557                      	ror m16u3 ;shift right result byte 3
-0000fc 9547                      	ror m16u2 ;rotate right result byte 2
-0000fd 9537                      	ror m16u1 ;rotate result byte 1 and multiplier High
-0000fe 9527                      	ror m16u0 ;rotate result byte 0 and multiplier Low
-0000ff 956a                      	dec mcnt16u ;decrement loop counter
-000100 f7b9                      	brne m16u_1 ;if not done, loop more
-000101 9508                      	ret
+000120 9557                      	ror m16u3 ;shift right result byte 3
+000121 9547                      	ror m16u2 ;rotate right result byte 2
+000122 9537                      	ror m16u1 ;rotate result byte 1 and multiplier High
+000123 9527                      	ror m16u0 ;rotate result byte 0 and multiplier Low
+000124 956a                      	dec mcnt16u ;decrement loop counter
+000125 f7b9                      	brne m16u_1 ;if not done, loop more
+000126 9508                      	ret
                                  
                                  ;***************************************************************************
                                  ;*
@@ -840,25 +817,25 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;* Calls div16u from application note AVR200
                                  ;***************************************************************************
                                  bin16_to_BCD:
-000102 e030                      	ldi r19, 0 ;high byte of divisor for div16u
-000103 e02a                      	ldi r18, 10 ;low byte of the divisor for div16u
+000127 e030                      	ldi r19, 0 ;high byte of divisor for div16u
+000128 e02a                      	ldi r18, 10 ;low byte of the divisor for div16u
                                  
-000104 d00c                      	rcall div16u ;divide original binary number by 10
-000105 2d6e                      	mov r22, r14 ;result is BCD digit 0 (least significant digit)
-000106 d00a                      	rcall div16u ;divide result from first division by 10, gives digit 1
-000107 94e2                      	swap r14 ;swap digit 1 for packing
-000108 296e                      	or r22, r14 ;pack
+000129 d00c                      	rcall div16u ;divide original binary number by 10
+00012a 2d6e                      	mov r22, r14 ;result is BCD digit 0 (least significant digit)
+00012b d00a                      	rcall div16u ;divide result from first division by 10, gives digit 1
+00012c 94e2                      	swap r14 ;swap digit 1 for packing
+00012d 296e                      	or r22, r14 ;pack
                                  
-000109 d007                      	rcall div16u ;divide result from second division by 10, gives digit 2
-00010a 2d7e                      	mov r23, r14 ;place in r23
-00010b d005                      	rcall div16u ;divide result from third division by 10, gives digit 3
-00010c 94e2                      	swap r14 ;swap digit 3 for packing
-00010d 297e                      	or r23, r14 ;pack
+00012e d007                      	rcall div16u ;divide result from second division by 10, gives digit 2
+00012f 2d7e                      	mov r23, r14 ;place in r23
+000130 d005                      	rcall div16u ;divide result from third division by 10, gives digit 3
+000131 94e2                      	swap r14 ;swap digit 3 for packing
+000132 297e                      	or r23, r14 ;pack
                                  
-00010e d002                      	rcall div16u ;divide result from fourth division by 10, gives digit 4
-00010f 2d8e                      	mov r24, r14 ;place in r24
+000133 d002                      	rcall div16u ;divide result from fourth division by 10, gives digit 4
+000134 2d8e                      	mov r24, r14 ;place in r24
                                  
-000110 9508                      ret
+000135 9508                      ret
                                  ;Subroutine div16u is from Atmel application note AVR200
                                  ;***************************************************************************
                                  ;*
@@ -888,27 +865,27 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  .def dcnt16u =r20
                                  ;***** Code
                                  div16u:
-000111 24ee                      	clr drem16uL			;clear remainder Low byte
-000112 18ff                      	sub drem16uH,drem16uH	;clear remainder High byte and carry
-000113 e141                      	ldi dcnt16u,17			;init loop counter
+000136 24ee                      	clr drem16uL			;clear remainder Low byte
+000137 18ff                      	sub drem16uH,drem16uH	;clear remainder High byte and carry
+000138 e141                      	ldi dcnt16u,17			;init loop counter
                                  d16u_1:
-000114 1f00                      	rol dd16uL				;shift left dividend
-000115 1f11                      	rol dd16uH
-000116 954a                      	dec dcnt16u				;decrement counter
-000117 f409                      	brne d16u_2				;if done
-000118 9508                      	ret						;return
+000139 1f00                      	rol dd16uL				;shift left dividend
+00013a 1f11                      	rol dd16uH
+00013b 954a                      	dec dcnt16u				;decrement counter
+00013c f409                      	brne d16u_2				;if done
+00013d 9508                      	ret						;return
                                  d16u_2:
-000119 1cee                      	rol drem16uL			;shift dividend into remainder
-00011a 1cff                      	rol drem16uH
-00011b 1ae2                      	sub drem16uL,dv16uL		;remainder = remainder - divisor
-00011c 0af3                      	sbc drem16uH,dv16uH		;
-00011d f420                      	brcc d16u_3				;if result negative
-00011e 0ee2                      	add drem16uL,dv16uL		;restore remainder
-00011f 1ef3                      	adc drem16uH,dv16uH
-000120 9488                      	clc						;clear carry to be shifted into result
-000121 cff2                      	rjmp d16u_1				;else
-000122 9408                      d16u_3: sec					;set carry to be shifted into result
-000123 cff0                      	rjmp d16u_1
+00013e 1cee                      	rol drem16uL			;shift dividend into remainder
+00013f 1cff                      	rol drem16uH
+000140 1ae2                      	sub drem16uL,dv16uL		;remainder = remainder - divisor
+000141 0af3                      	sbc drem16uH,dv16uH		;
+000142 f420                      	brcc d16u_3				;if result negative
+000143 0ee2                      	add drem16uL,dv16uL		;restore remainder
+000144 1ef3                      	adc drem16uH,dv16uH
+000145 9488                      	clc						;clear carry to be shifted into result
+000146 cff2                      	rjmp d16u_1				;else
+000147 9408                      d16u_3: sec					;set carry to be shifted into result
+000148 cff0                      	rjmp d16u_1
                                  
                                  ;***************************************************************************
                                  ;* 
@@ -933,16 +910,16 @@ C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm
                                  ;*
                                  ;***************************************************************************
                                  delay_1s:
-000124 e7e2                      	ldi r30, low(5234) ;input update delay restriction
-000125 e1f4                      	ldi r31, high(5234)
+000149 e7e2                      	ldi r30, low(5234) ;input update delay restriction
+00014a e1f4                      	ldi r31, high(5234)
                                  	outer_loop:
-000126 efdf                      	ldi r29, $ff
+00014b efdf                      	ldi r29, $ff
                                  	inner_loop:
-000127 95da                      	dec r29
-000128 f7f1                      	brne inner_loop
-000129 9731                      	sbiw r31:r30, 1
-00012a f7d9                      	brne outer_loop
-00012b 9508                      	ret
+00014c 95da                      	dec r29
+00014d f7f1                      	brne inner_loop
+00014e 9731                      	sbiw r31:r30, 1
+00014f f7d9                      	brne outer_loop
+000150 9508                      	ret
                                  
                                  
                                  /*ESE280 Fall 2024
@@ -998,8 +975,8 @@ Instructions used: 37 out of 114 (32.5%)
 "AVR128DB48" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000258    600      0    600  131072   0.5%
-[.dseg] 0x004000 0x004040      0     64     64   16384   0.4%
+[.cseg] 0x000000 0x0002a2    600     74    674  131072   0.5%
+[.dseg] 0x004000 0x004007      0      7      7   16384   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
 Assembly complete, 0 errors, 9 warnings
