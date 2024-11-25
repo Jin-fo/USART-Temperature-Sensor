@@ -1,0 +1,51 @@
+.nolist
+.include "avr128db48def.inc"
+.list
+
+
+start:
+	ldi r16, low(35)
+	sts USART3_BAUDL, r16
+	ldi r16, high(35)
+	sts USART3_BAUDH, r16        
+
+	ldi r16, 0x03
+	sts USART3_CTRLC, r16
+
+	ldi r16, 0x40
+	sts USART3_CTRLB, r16
+
+	sbi VPORTB_DIR, 0
+
+main:
+	ldi ZL, low(control*2)
+	ldi ZH, high(control*2)
+
+	ldi r16, 0x7c
+	rcall USART_TX
+	//ldi r16, 0x07
+	//rcall USART_TX
+
+/*	loop:
+		lpm r16, z+
+		cpi r16, 0x00
+		breq end
+		rcall usart_tx
+		rjmp loop */
+	end:
+	ldi r16, 0x11
+	rcall USART_TX
+	rjmp end
+
+USART_TX:
+	lds r17, USART3_STATUS
+	sbrs r17, 5
+	rjmp USART_TX
+
+sts USART3_TXDATAL, r16
+ret
+
+
+
+
+control: .db "<control>r", 0x00
