@@ -2,7 +2,7 @@
 .include "avr128db48def.inc"
 .list
 
-
+;38400=416, 2400=6667,833, 35,
 start:
 	ldi r16, low(35)
 	sts USART3_BAUDL, r16
@@ -18,23 +18,18 @@ start:
 	sbi VPORTB_DIR, 0
 
 main:
-	ldi ZL, low(control*2)
-	ldi ZH, high(control*2)
-
-	ldi r16, 0x7c
+	ldi r16, 0x7c			;start command
 	rcall USART_TX
-	//ldi r16, 0x07
-	//rcall USART_TX
 
-/*	loop:
-		lpm r16, z+
-		cpi r16, 0x00
-		breq end
-		rcall usart_tx
-		rjmp loop */
+	ldi r16, 0x0D			;set baud rate to 9600
+	rcall USART_TX
+	ldi r16, 'm'
+	rcall USART_TX
+
+	ldi r16, 0x09			;end command
+	rcall USART_TX
+
 	end:
-	ldi r16, 0x11
-	rcall USART_TX
 	rjmp end
 
 USART_TX:
@@ -45,7 +40,4 @@ USART_TX:
 sts USART3_TXDATAL, r16
 ret
 
-
-
-
-control: .db "<control>r", 0x00
+;baud: .db 145455, 53333, 26667, 13333, 6667, 3333, 1667, 1111, 833, 416, 278, 139, 69, ;;;35
