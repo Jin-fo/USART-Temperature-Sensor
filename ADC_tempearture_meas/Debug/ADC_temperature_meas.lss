@@ -1,0 +1,1006 @@
+
+AVRASM ver. 2.2.8  C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm Sun Nov 24 22:43:27 2024
+
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc'
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): Including file 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc'
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(372): warning: Register r18 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(373): warning: Register r19 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(461): warning: Register r16 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(462): warning: Register r17 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(463): warning: Register r16 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(464): warning: Register r17 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(465): warning: Register r18 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(466): warning: Register r19 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc(467): warning: Register r20 already defined by the .DEF directive
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc' included form here
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\AVR-Dx_DFP\1.10.114\avrasm\inc\avr128db48def.inc'
+C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\main.asm(342): Including file 'C:\Users\jinyc\OneDrive\Documents\Atmel Studio\7.0\ADC_temperature_meas\subroutines.inc'
+                                 
+                                 .list
+                                 
+                                 ;***************************************************************************
+                                 ;*
+                                 ;* Title: ADC_MCP9700A_2.0
+                                 ;* Author: Jin Y Chen
+                                 ;* Version: 2.0
+                                 ;* Last updated: 11/13/2024
+                                 ;* Target: avr128db48
+                                 ;*
+                                 ;* DESCRIPTION
+                                 ;*
+                                 ;*
+                                 ;*
+                                 ;*
+                                 ;* VERSION HISTORY
+                                 ;* 1.0 Original version
+                                 ;***************************************************************************
+                                 .cseg
+                                 initialize:
+                                 	;Enable Reference Voltage
+000000 e003                      	ldi r16, 0x03
+000001 9300 00b0                 	sts VREF_ADC0REF, r16
+                                 
+                                 	;Enable Analog input
+000003 e004                      	ldi r16, 0x04
+000004 9300 0493                 	sts PORTE_PIN3CTRL, r16
+                                 
+                                 	;ADC Presec to 64
+000006 e00a                      	ldi r16, 0x0A
+000007 9300 0602                 	sts ADC0_CTRLC, r16
+                                 
+                                 	;Positive ADC input
+000009 e00b                      	ldi r16, 0x0B
+00000a 9300 0608                 	sts ADC0_MUXPOS, r16
+                                 
+                                 	;ADC mode
+00000c e001                      	ldi r16, 0x01
+00000d 9300 0600                 	sts ADC0_CTRLA, r16
+                                 
+                                 	//---SER_LED display with USART---//
+                                 	;Barud Rate
+00000f e803                      	ldi r16, LOW(1667)
+000010 9300 0868                 	sts USART3_BAUDL, r16
+000012 e006                      	ldi r16, HIGH(1667)
+000013 9300 0869                 	sts USART3_BAUDH, r16
+                                 
+                                 	;Formate
+000015 e003                      	ldi r16, 0x03
+000016 9300 0867                 	sts USART3_CTRLC, r16
+                                 
+                                 	;transmitor
+000018 e400                      	ldi r16, 0x40
+000019 9300 0866                 	sts USART3_CTRLB, r16
+                                 
+                                 	;IO
+00001b 9a20                      	sbi VPORTB_DIR, 0 ;transmitor output
+00001c 9883                      	cbi VPORTE_DIR, 3 ;reciever input
+                                 
+                                 main:
+                                 ;setup clear_screen
+00001d d087                      	rcall clear_screen
+                                 
+                                 ;display_post_home
+00001e d08b                      	rcall display_post_home
+00001f d105                      	rcall delay_1s
+                                 
+                                 ;re-display clear_screen
+                                 	get_data:
+000020 d084                      		rcall clear_screen
+                                 ;check_start_convert
+                                 	start_convert:
+000021 e001                      		ldi r16, 0x01
+000022 9300 060a                 		sts ADC0_COMMAND, r16
+                                 
+                                 	check_convert:
+000024 9100 060d                 		lds r16, ADC0_INTFLAGS
+000026 ff00                      		sbrs r16, 0
+000027 cffc                      		rjmp check_convert
+                                 
+000028 9100 0610                 		lds r16, ADC0_RESL
+00002a 9110 0611                 		lds r17, ADC0_RESH
+                                 
+                                 ;Task 3 and Task 4
+00002c d086                      	rcall to_voltage_2500
+                                 	//rcall to_voltage_5	;~work
+                                 
+00002d d09d                      	rcall push_data			;push data[r16L:r17H]
+                                 
+00002e d0a1                      	rcall pull_data
+00002f d00b                      	rcall display_bin
+000030 d0b8                      	rcall next_line
+                                 
+000031 d09e                      	rcall pull_data
+000032 d021                      	rcall display_hex
+000033 d0b5                      	rcall next_line
+                                 
+000034 d09b                      	rcall pull_data
+000035 d02d                      	rcall display_dec
+000036 d0b2                      	rcall next_line
+                                 
+                                 ;Task 4
+000037 d098                      	rcall pull_data
+000038 d04a                      	rcall display_tem
+                                 
+000039 d0eb                      	rcall delay_1s
+00003a cfe5                      	rjmp get_data
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "display_bin" - display the binary voltage 
+                                 ;*
+                                 ;* Description:
+                                 ;* 
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r16, r17
+                                 ;*
+                                 ;* Returns: r20
+                                 ;*
+                                 ;* Notes: 
+                                 ;*	
+                                 ;***************************************************************************
+                                 display_bin:
+                                 	//data formate
+00003b e442                      	ldi r20, 'B'
+00003c d0b0                      	rcall USART_TX
+00003d e449                      	ldi r20, 'I'
+00003e d0ae                      	rcall USART_TX
+00003f e34a                      	ldi r20, ':'
+000040 d0ac                      	rcall USART_TX
+                                 
+                                 	//write binary
+000041 e024                      	ldi r18, 4 ;loop control
+                                 write_bit_H:
+000042 ff17                      	sbrs r17, 7
+000043 e340                      	ldi r20, '0'
+000044 fd17                      	sbrc r17, 7
+000045 e341                      	ldi r20, '1'
+                                 
+000046 d0a6                      	rcall USART_TX
+000047 0f11                      	lsl r17
+000048 952a                      	dec r18
+000049 f7c1                      	brne write_bit_H
+                                 
+00004a e028                      	ldi r18, 8
+                                 write_bit_L:
+00004b ff07                      	sbrs r16, 7
+00004c e340                      	ldi r20, '0'
+00004d fd07                      	sbrc r16, 7
+00004e e341                      	ldi r20, '1'
+                                 
+00004f d09d                      	rcall USART_TX
+000050 0f00                      	lsl r16
+000051 952a                      	dec r18
+000052 f7c1                      	brne write_bit_L
+000053 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "display_hex" - display the hex-decimal voltage 
+                                 ;*
+                                 ;* Description:
+                                 ;* 
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r16, r17
+                                 ;*
+                                 ;* Returns: r20
+                                 ;*
+                                 ;* Notes: 
+                                 ;*	
+                                 ;***************************************************************************
+                                 display_hex:
+                                 	//data formate
+000054 e448                      	ldi r20, 'H'
+000055 d097                      	rcall USART_TX
+000056 e748                      	ldi r20, 'x'
+000057 d095                      	rcall USART_TX
+000058 e34a                      	ldi r20, ':'
+000059 d093                      	rcall USART_TX
+                                 
+                                 	//write hex
+00005a 2f31                      	mov r19, r17				;r19(msig-HIGH-bit)
+00005b 2f21                      	mov r18, r17				;r18(lsig-HIGH-bit)
+                                 
+00005c d078                      	rcall write_most_bit
+00005d d07f                      	rcall write_least_bit
+                                 
+00005e 2f30                      	mov r19, r16
+00005f 2f20                      	mov r18, r16
+                                 
+000060 d074                      	rcall write_most_bit
+000061 d07b                      	rcall write_least_bit
+000062 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "display_dec" - display the decimal voltage 
+                                 ;*
+                                 ;* Description:
+                                 ;* 
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r16, r17
+                                 ;*
+                                 ;* Returns: r20
+                                 ;*
+                                 ;* Notes: 
+                                 ;*	
+                                 ;***************************************************************************
+                                 display_dec:
+                                 	//data format
+000063 e546                      	ldi r20, 'V'
+000064 d088                      	rcall USART_TX
+000065 e64f                      	ldi r20, 'o'
+000066 d086                      	rcall USART_TX
+000067 e34a                      	ldi r20, ':'
+000068 d084                      	rcall USART_TX
+                                 
+000069 d099                      	rcall bin16_to_BCD
+00006a 2f28                      	mov r18, r24				;digit 5th
+00006b d071                      	rcall write_least_bit		
+00006c 9340 403f                 	sts dDec5, r20
+                                 
+00006e 2f37                      	mov r19, r23				;digit 4th
+00006f 2f27                      	mov r18, r23				;digit 3th
+000070 d064                      	rcall write_most_bit
+000071 9340 403e                 	sts dDec4, r20
+000073 d069                      	rcall write_least_bit
+000074 9340 403d                 	sts dDec3, r20
+                                 
+000076 2f36                      	mov r19, r22				;digit 2th
+000077 2f26                      	mov r18, r22				;digit 1th
+000078 d05c                      	rcall write_most_bit
+000079 9340 403c                 	sts dDec2, r20
+00007b d061                      	rcall write_least_bit
+00007c 9340 403b                 	sts dDec1, r20
+                                 
+                                 	//units
+00007e e64d                      	ldi r20, 'm'
+00007f d06d                      	rcall USART_TX
+000080 e546                      	ldi r20, 'V'
+000081 d06b                      	rcall USART_TX
+000082 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "display_tem" - display the temperature with off-set
+                                 ;*
+                                 ;* Description:
+                                 ;* 
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r16, r17
+                                 ;*
+                                 ;* Returns: r20
+                                 ;*
+                                 ;* Notes: 
+                                 ;*	10 mV = 1 Celius with -50C offset
+                                 ;***************************************************************************
+                                 display_tem:
+000083 e544                      	ldi r20, 'T'
+000084 d068                      	rcall USART_TX
+000085 e64d                      	ldi r20, 'm'
+000086 d066                      	rcall USART_TX
+000087 e34a                      	ldi r20, ':'
+000088 d064                      	rcall USART_TX
+                                 //voltage offset in binary
+000089 ef24                      	ldi r18, LOW(500)
+00008a e031                      	ldi r19, HIGH(500)
+                                 
+00008b 0b02                      	sbc r16, r18
+00008c 0b13                      	sbc r17, r19
+                                 	
+00008d f008                      	brcs overflow
+00008e c006                      	rjmp write_decimal
+                                 
+                                 	//check negative
+                                 overflow:
+00008f e24d                      	ldi r20, 0x2D
+000090 d05c                      	rcall USART_TX
+000091 9500                      	com r16
+000092 e021                      	ldi r18, 1
+000093 1f02                      	adc r16, r18
+000094 9510                      	com r17
+                                 
+                                 write_decimal:
+000095 d06d                      	rcall bin16_to_BCD
+000096 2f28                      	mov r18, r24				;digit 5th
+000097 d045                      	rcall write_least_bit		
+                                 
+000098 2f37                      	mov r19, r23				;digit 4th
+000099 2f27                      	mov r18, r23				;digit 3th
+00009a d03a                      	rcall write_most_bit
+00009b d041                      	rcall write_least_bit
+                                 
+00009c 2f36                      	mov r19, r22				;digit 2th
+00009d 2f26                      	mov r18, r22				;digit 1th
+00009e d036                      	rcall write_most_bit
+                                 
+                                 	//decimal point
+00009f e24e                      	ldi r20, 0x2E
+0000a0 d04c                      	rcall USART_TX
+                                 
+0000a1 d03b                      	rcall write_least_bit
+                                 	//units
+0000a2 e443                      	ldi r20, 0x43
+0000a3 d049                      	rcall USART_TX
+0000a4 9508                      	ret
+                                 
+                                 .include "subroutines.inc"
+                                 
+004000 45
+004001 53
+004002 45
+004003 32
+004004 38
+004005 30
+004006 20
+004007 46
+004008 61
+004009 6c
+00400a 6c
+00400b 20
+00400c 32
+00400d 30
+00400e 32
+00400f 34
+004010 0d
+004011 0a
+004012 4a
+004013 69
+004014 6e
+004015 0d
+004016 0a
+004017 4c
+004018 61
+004019 62
+00401a 6f
+00401b 72
+00401c 61
+00401d 74
+00401e 6f
+00401f 72
+004020 79
+004021 20
+004022 31
+004023 30
+004024 0d
+004025 0a
+004026 54
+004027 65
+004028 6d
+004029 70
+00402a 65
+00402b 72
+00402c 61
+00402d 74
+00402e 75
+00402f 72
+004030 65
+004031 20
+004032 53
+004033 65
+004034 6e
+004035 73
+004036 6f
+004037 72
+004038 00                        post_home: .db "ESE280 Fall 2024", 0x0D, 0x0A, "Jin", 0x0D, 0x0A, "Laboratory 10", 0x0D, 0x0A, "Temperature Sensor", 0x00//next line
+                                 
+004039                           dLOW:  .byte 1
+00403a                           dHIGH: .byte 1
+                                 
+00403b                           dDec1: .byte 1
+00403c                           dDec2: .byte 1
+00403d                           dDec3: .byte 1
+00403e                           dDec4: .byte 1
+00403f                           dDec5: .byte 1
+                                 
+                                 .cseg
+                                 //---Subtrotine---//
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "clear_screen" - Clear the LCD
+                                 ;*
+                                 ;* Description:
+                                 ;*	
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: 
+                                 ;*
+                                 ;* Returns: 
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 clear_screen:
+0000a5 e74c                      	ldi r20, '|'
+0000a6 d046                      	rcall USART_TX
+0000a7 e24d                      	ldi r20, '-'
+0000a8 d044                      	rcall USART_TX
+0000a9 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "display_post_home" - show the home screen message
+                                 ;*
+                                 ;* Description:
+                                 ;*	
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: 
+                                 ;*
+                                 ;* Returns: 
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 display_post_home:
+                                 	//insert code here
+                                 	clear:
+0000aa e4f0                      		ldi ZH, high(post_home)
+0000ab e0e0                      		ldi ZL, LOW(post_home)
+                                 
+                                 	start_write:
+0000ac 9105                      		lpm r16, Z+
+0000ad 2300                      		tst r16
+0000ae f019                      		breq end_write
+0000af 2f40                      		mov r20, r16
+0000b0 d03c                      		rcall USART_TX
+0000b1 cffa                      		rjmp start_write
+                                 
+                                 	end_write:
+0000b2 9508                      		ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "to_voltage_2500" - convert to voltage
+                                 ;*
+                                 ;* Description:
+                                 ;*	volatage is in mV 
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r16, r17,
+                                 ;*
+                                 ;* Returns: r16, r17
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 to_voltage_2500: 
+0000b3 ec24                      	ldi r18, LOW(2500)
+0000b4 e039                      	ldi r19, HIGH(2500)
+0000b5 d03e                      	rcall mpy16u			//use 24-bits or 3-bytes i.e r21 is empty
+                                 		
+                                 	//12 right shift by ignoring r18 + 4 right shift
+0000b6 9488                      	clc
+0000b7 e024                      	ldi r18, 4
+                                 	loop:
+0000b8 9546                      	lsr r20
+0000b9 9537                      	ror r19
+0000ba 952a                      	dec r18
+0000bb f7e1                      	brne loop
+                                 
+0000bc 2f03                      	mov r16, r19
+0000bd 2f14                      	mov r17, r20
+                                 
+0000be 9508                      	ret
+                                 
+                                 to_voltage_5: //in V
+0000bf e025                      	ldi r18, LOW(5)
+0000c0 e030                      	ldi r19, HIGH(5)
+0000c1 d032                      	rcall mpy16u //
+                                 
+0000c2 9488                      	clc
+                                 	//not sure why shift 3 times, got by testing
+0000c3 e043                      	ldi r20, 3
+                                 	loop1:
+0000c4 9536                      	lsr r19
+0000c5 9527                      	ror r18
+0000c6 954a                      	dec r20
+0000c7 f7e1                      	brne loop1
+                                 
+                                 	//result voltage stored
+0000c8 2f02                      	mov r16, r18
+0000c9 2f13                      	mov r17, r19
+0000ca 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "push_data" - push data memory
+                                 ;*
+                                 ;* Description:
+                                 ;*	store that into 2 register of the data memory named dLOW:dHIGH
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r16, r17
+                                 ;*
+                                 ;* Returns: 
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 push_data:
+0000cb 9300 4039                 	sts dLOW,  r16
+0000cd 9310 403a                 	sts dHIGH, r17
+0000cf 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "pull_data" - pull from data memory
+                                 ;*
+                                 ;* Description:
+                                 ;*	read the 2 register of the data memory named dLOW:dHIGH
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: 
+                                 ;*
+                                 ;* Returns: r16, r17
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 pull_data:
+0000d0 9100 4039                 	lds r16,  dLOW
+0000d2 9110 403a                 	lds r17, dHIGH
+0000d4 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "write_most_bit" - Get 4-Most bit
+                                 ;*
+                                 ;* Description:
+                                 ;*	masking most signifcant bit(r19)
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r19
+                                 ;*
+                                 ;* Returns:
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 write_most_bit:
+0000d5 9536                      	lsr r19
+0000d6 9536                      	lsr r19
+0000d7 9536                      	lsr r19
+0000d8 9536                      	lsr r19
+0000d9 2f43                      	mov r20, r19
+0000da d007                      	rcall to_ASCII
+0000db d011                      	rcall USART_TX
+0000dc 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "write_least_bit" - Get 4-least bit
+                                 ;*
+                                 ;* Description:
+                                 ;*	masking least signifcant bit(r18)
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r18
+                                 ;*
+                                 ;* Returns: 
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 write_least_bit:
+0000dd 702f                      	andi r18, 0x0f
+0000de 2f42                      	mov r20, r18
+0000df d002                      	rcall to_ASCII
+0000e0 d00c                      	rcall USART_TX
+0000e1 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "to_ASCII" - convert to ASCII character
+                                 ;*
+                                 ;* Description:
+                                 ;*
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: write_least_bit, write_most_bit,
+                                 ;*
+                                 ;* Returns:
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 to_ASCII:
+0000e2 304a                      	cpi r20, 10
+0000e3 f410                      	brsh concat_x4
+                                 	concat_x3:
+0000e4 6340                      	ori r20, 0x30
+0000e5 9508                      	ret
+                                 
+                                 	concat_x4:
+0000e6 6440                      	ori r20, 0x40
+0000e7 5049                      	subi r20, 9
+0000e8 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "next_line" - go to next line
+                                 ;*
+                                 ;* Description:
+                                 ;*
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters:
+                                 ;*
+                                 ;* Returns: r20
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 next_line:
+0000e9 e04d                      	ldi r20, 0x0D //new_line
+0000ea d002                      	rcall USART_TX
+0000eb e04a                      	ldi r20, 0x0A
+0000ec d000                      	rcall USART_TX
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "USART_TX" - Send with USART transmit
+                                 ;*
+                                 ;* Description:
+                                 ;* Send ASCII character in r20 for USART to transmit
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r20
+                                 ;*
+                                 ;* Returns: 
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 USART_TX:
+0000ed 9150 0864                 	lds r21, USART3_STATUS
+0000ef ff55                      	sbrs r21, 5
+0000f0 cffc                      	rjmp USART_TX
+                                 
+0000f1 9340 0862                 	sts USART3_TXDATAL, r20
+0000f3 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;*
+                                 ;* "mpy16u" - 16x16 Bit Unsigned Multiplication
+                                 ;*
+                                 ;* This subroutine multiplies the two 16-bit register variables
+                                 ;* mp16uH:mp16uL and mc16uH:mc16uL.
+                                 ;* The result is placed in m16u3:m16u2:m16u1:m16u0.
+                                 ;*  
+                                 ;* Number of words :14 + return
+                                 ;* Number of cycles :153 + return
+                                 ;* Low registers used :None
+                                 ;* High registers used  :7 (mp16uL,mp16uH,mc16uL/m16u0,mc16uH/m16u1,m16u2,
+                                 ;*                          m16u3,mcnt16u)
+                                 ;*
+                                 ;***************************************************************************
+                                 ;***** Subroutine Register Variables
+                                 .def mc16uL =r16 ;multiplicand low byte
+                                 .def mc16uH =r17 ;multiplicand high byte
+                                 .def mp16uL =r18 ;multiplier low byte
+                                 .def mp16uH =r19 ;multiplier high byte
+                                 
+                                 .def m16u0 =r18 ;result byte 0 (LSB)
+                                 .def m16u1 =r19 ;result byte 1
+                                 .def m16u2 =r20 ;result byte 2
+                                 .def m16u3 =r21 ;result byte 3 (MSB)
+                                 .def mcnt16u =r22 ;loop counter
+                                 ;***** Code
+                                 mpy16u:
+0000f4 2755                      	clr m16u3 ;clear 2 highest bytes of result
+0000f5 2744                      	clr m16u2
+0000f6 e160                      	ldi mcnt16u,16 ;init loop counter
+0000f7 9536                      	lsr mp16uH
+0000f8 9527                      	ror mp16uL
+                                 
+                                 m16u_1:
+0000f9 f410                      	brcc noad8 ;if bit 0 of multiplier set
+0000fa 0f40                      	add m16u2,mc16uL ;add multiplicand Low to byte 2 of res
+0000fb 1f51                      	adc m16u3,mc16uH ;add multiplicand high to byte 3 of res
+                                 noad8:
+0000fc 9557                      	ror m16u3 ;shift right result byte 3
+0000fd 9547                      	ror m16u2 ;rotate right result byte 2
+0000fe 9537                      	ror m16u1 ;rotate result byte 1 and multiplier High
+0000ff 9527                      	ror m16u0 ;rotate result byte 0 and multiplier Low
+000100 956a                      	dec mcnt16u ;decrement loop counter
+000101 f7b9                      	brne m16u_1 ;if not done, loop more
+000102 9508                      	ret
+                                 
+                                 ;***************************************************************************
+                                 ;*
+                                 ;* "bin16_to_BCD" - 16-bit Binary to BCD Conversion
+                                 ;*
+                                 ;* Description: Converts a 16-bit unsigned binary number to a five digit
+                                 ;* packed BCD number. Uses subroutine div16u from Atmel application note AVR200
+                                 ;*
+                                 ;* Author: Ken Short
+                                 ;* Version: 0.0
+                                 ;* Last updated: 111320
+                                 ;* Target: ATmega4809 or AVR128DB48
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified: r14, r15
+                                 ;* High registers modified: r16, r17, r18, r19, r20, r22, r23, r24
+                                 ;*
+                                 ;* Parameters: r17:r16 16-bit unsigned right justified number to be converted.
+                                 ;* Returns: r24:r23:r22 five digit packed BCD result.
+                                 ;*
+                                 ;* Notes:
+                                 ;* Subroutine uses repeated division by 10 to perform conversion.
+                                 ;* Calls div16u from application note AVR200
+                                 ;***************************************************************************
+                                 bin16_to_BCD:
+000103 e030                      	ldi r19, 0 ;high byte of divisor for div16u
+000104 e02a                      	ldi r18, 10 ;low byte of the divisor for div16u
+                                 
+000105 d00c                      	rcall div16u ;divide original binary number by 10
+000106 2d6e                      	mov r22, r14 ;result is BCD digit 0 (least significant digit)
+000107 d00a                      	rcall div16u ;divide result from first division by 10, gives digit 1
+000108 94e2                      	swap r14 ;swap digit 1 for packing
+000109 296e                      	or r22, r14 ;pack
+                                 
+00010a d007                      	rcall div16u ;divide result from second division by 10, gives digit 2
+00010b 2d7e                      	mov r23, r14 ;place in r23
+00010c d005                      	rcall div16u ;divide result from third division by 10, gives digit 3
+00010d 94e2                      	swap r14 ;swap digit 3 for packing
+00010e 297e                      	or r23, r14 ;pack
+                                 
+00010f d002                      	rcall div16u ;divide result from fourth division by 10, gives digit 4
+000110 2d8e                      	mov r24, r14 ;place in r24
+                                 
+000111 9508                      ret
+                                 ;Subroutine div16u is from Atmel application note AVR200
+                                 ;***************************************************************************
+                                 ;*
+                                 ;* "div16u" - 16/16 Bit Unsigned Division
+                                 ;*
+                                 ;* This subroutine divides the two 16-bit numbers
+                                 ;*# "dd16uH:dd16uL" (dividend) and "dv16uH:dv16uL" (divisor).
+                                 ;* The result is placed in "dres16uH:dres16uL" and the remainder in
+                                 ;* "drem16uH:drem16uL".
+                                 ;*  
+                                 ;* Number of words :19
+                                 ;* Number of cycles :235/251 (Min/Max)
+                                 ;* Low registers used :2 (drem16uL,drem16uH)
+                                 ;* High registers used  :5 (dres16uL/dd16uL,dres16uH/dd16uH,dv16uL,dv16uH,
+                                 ;*    dcnt16u)
+                                 ;*
+                                 ;***************************************************************************
+                                 ;***** Subroutine Register Variables
+                                 .def drem16uL=r14
+                                 .def drem16uH=r15
+                                 .def dres16uL=r16
+                                 .def dres16uH=r17
+                                 .def dd16uL =r16
+                                 .def dd16uH =r17
+                                 .def dv16uL =r18
+                                 .def dv16uH =r19
+                                 .def dcnt16u =r20
+                                 ;***** Code
+                                 div16u:
+000112 24ee                      	clr drem16uL			;clear remainder Low byte
+000113 18ff                      	sub drem16uH,drem16uH	;clear remainder High byte and carry
+000114 e141                      	ldi dcnt16u,17			;init loop counter
+                                 d16u_1:
+000115 1f00                      	rol dd16uL				;shift left dividend
+000116 1f11                      	rol dd16uH
+000117 954a                      	dec dcnt16u				;decrement counter
+000118 f409                      	brne d16u_2				;if done
+000119 9508                      	ret						;return
+                                 d16u_2:
+00011a 1cee                      	rol drem16uL			;shift dividend into remainder
+00011b 1cff                      	rol drem16uH
+00011c 1ae2                      	sub drem16uL,dv16uL		;remainder = remainder - divisor
+00011d 0af3                      	sbc drem16uH,dv16uH		;
+00011e f420                      	brcc d16u_3				;if result negative
+00011f 0ee2                      	add drem16uL,dv16uL		;restore remainder
+000120 1ef3                      	adc drem16uH,dv16uH
+000121 9488                      	clc						;clear carry to be shifted into result
+000122 cff2                      	rjmp d16u_1				;else
+000123 9408                      d16u_3: sec					;set carry to be shifted into result
+000124 cff0                      	rjmp d16u_1
+                                 
+                                 ;***************************************************************************
+                                 ;* 
+                                 ;* "delay_1s" - Response delay seconds
+                                 ;*
+                                 ;* Description:
+                                 ;* Send ASCII character in r20 for USART to transmit
+                                 ;* Author:
+                                 ;* Version:
+                                 ;* Last updated:
+                                 ;* Target:
+                                 ;* Number of words:
+                                 ;* Number of cycles:
+                                 ;* Low registers modified:
+                                 ;* High registers modified:
+                                 ;*
+                                 ;* Parameters: r20
+                                 ;*
+                                 ;* Returns: 
+                                 ;*
+                                 ;* Notes: 
+                                 ;*
+                                 ;***************************************************************************
+                                 delay_1s:
+000125 e7e2                      	ldi r30, low(5234) ;input update delay restriction
+000126 e1f4                      	ldi r31, high(5234)
+                                 	outer_loop:
+000127 efdf                      	ldi r29, $ff
+                                 	inner_loop:
+000128 95da                      	dec r29
+000129 f7f1                      	brne inner_loop
+00012a 9731                      	sbiw r31:r30, 1
+00012b f7d9                      	brne outer_loop
+00012c 9508                      	ret
+                                 
+                                 
+                                 /*ESE280 Fall 2024
+                                 <student’s name>
+                                 Laboratory 09
+
+
+RESOURCE USE INFORMATION
+------------------------
+
+Notice:
+The register and instruction counts are symbol table hit counts,
+and hence implicitly used resources are not counted, eg, the
+'lpm' instruction without operands implicitly uses r0 and z,
+none of which are counted.
+
+x,y,z are separate entities in the symbol table and are
+counted separately from r26..r31 here.
+
+.dseg memory usage only counts static data declared with .byte
+
+"AVR128DB48" register use summary:
+x  :   0 y  :   0 z  :   1 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
+r13:   0 r14:  11 r15:   5 r16:  40 r17:  14 r18:  29 r19:  24 r20:  47 
+r21:   5 r22:   8 r23:   6 r24:   3 r25:   0 r26:   0 r27:   0 r28:   0 
+r29:   2 r30:   3 r31:   3 
+Registers used: 15 out of 35 (42.9%)
+
+"AVR128DB48" instruction use summary:
+.lds  :   0 .sts  :   0 adc   :   3 add   :   2 adiw  :   0 and   :   0 
+andi  :   1 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   2 brcs  :   1 break :   0 breq  :   1 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
+brne  :   8 brpl  :   0 brsh  :   1 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   1 cbr   :   0 
+clc   :   3 clh   :   0 cli   :   0 cln   :   0 clr   :   3 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   2 cp    :   0 cpc   :   0 
+cpi   :   1 cpse  :   0 dec   :   7 elpm  :   0 eor   :   0 fmul  :   0 
+fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   0 
+jmp   :   0 ld    :   0 ldd   :   0 ldi   :  55 lds   :   6 lpm   :   1 
+lsl   :   2 lsr   :   7 mov   :  24 movw  :   0 mul   :   0 muls  :   0 
+mulsu :   0 neg   :   0 nop   :   0 or    :   2 ori   :   2 out   :   0 
+pop   :   0 push  :   0 rcall :  69 ret   :  19 reti  :   0 rjmp  :   7 
+rol   :   4 ror   :   7 sbc   :   3 sbci  :   0 sbi   :   1 sbic  :   0 
+sbis  :   0 sbiw  :   1 sbr   :   0 sbrc  :   2 sbrs  :   4 sec   :   1 
+seh   :   0 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 
+sev   :   0 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 
+sts   :  18 sub   :   2 subi  :   1 swap  :   2 tst   :   1 wdr   :   0 
+
+Instructions used: 38 out of 114 (33.3%)
+
+"AVR128DB48" memory use summary [bytes]:
+Segment   Begin    End      Code   Data   Used    Size   Use%
+---------------------------------------------------------------
+[.cseg] 0x000000 0x00025a    602      0    602  131072   0.5%
+[.dseg] 0x004000 0x004040      0     64     64   16384   0.4%
+[.eseg] 0x000000 0x000000      0      0      0     512   0.0%
+
+Assembly complete, 0 errors, 9 warnings
