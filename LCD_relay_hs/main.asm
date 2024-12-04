@@ -43,16 +43,17 @@ main:
 
 	RX_complete:
 		cpi r16, 0x0A
-		breq TX_clear
+		breq TX
 		rjmp RX_clear
+
+	TX: 
+	ldi YL, low(message)
+	ldi YH, high(message)
 
 	TX_clear:
 		lds r17, USART3_STATUS
 		sbrs r17, 5
 		rjmp TX_clear
-
-	ldi YL, low(message)
-	ldi YH, high(message)
 
 	ld r16, Y+
 	sts USART3_TXDATAL, r16
