@@ -2,42 +2,70 @@
 .include "avr128db48def.inc"
 .list
 
-;38400=416, 2400=6667,833, 35,
+.dseg
+message: .byte 64
+.cseg
+
 start:
-	ldi r16, low(35)
+	ldi r16, low(1667)
 	sts USART3_BAUDL, r16
-	ldi r16, high(35)
-	sts USART3_BAUDH, r16        
+	ldi r16, high(1667)
+	sts USART3_BAUDH, r16
+
+	ldi r16, low(139)
+	sts USART1_BAUDL, r16
+	ldi r16, high(139)
+	sts USART1_BAUDH, r16        
 
 	ldi r16, 0x03
 	sts USART3_CTRLC, r16
+	sts USART1_CTRLC, r16
 
 	ldi r16, 0x40
 	sts USART3_CTRLB, r16
+	ldi r16, 0x80
+	sts USART1_CTRLB, r16
 
 	sbi VPORTB_DIR, 0
+	cbi VPORTC_DIR, 1
 
 main:
-	ldi r16, 0x7c			;start command
-	rcall USART_TX
+	ldi r16, '|'
+	sts USART3_TXDATAL, r16
+	ldi r16, '-'
+	sts USART3_TXDATAL, r16
 
-	ldi r16, 0x0D			;set baud rate to 9600
-	rcall USART_TX
-	ldi r16, 'm'
-	rcall USART_TX
+	ldi YL, low(message)
+	ldi YH, high(message)
+	
+	RX_clear:
+		lds r17, USART1_RXDATAH;
+		sbrs r17, 7
+		rjmp RX_clear
 
-	ldi r16, 0x09			;end command
-	rcall USART_TX
+	lds r16, USART1_RXDATAL
+	st Y+, r16
 
-	end:
-	rjmp end
+	RX_complete:
+		cpi r16, 0x0A
+		breq TX_start
+		rjmp RX_clear
 
-USART_TX:
-	lds r17, USART3_STATUS
-	sbrs r17, 5
-	rjmp USART_TX
+	TX_start:
+	ldi YL, low(message)
+	ldi YH, high(message)
 
-sts USART3_TXDATAL, r16
-ret
+	TX_clear:
+		lds r17, USART3_STATUS
+		sbrs r17, 5
+		rjmp TX_clear
 
-;baud: .db 145455, 53333, 26667, 13333, 6667, 3333, 1667, 1111, 833, 416, 278, 139, 69, ;;;35
+	ld r16, Y+
+	sts USART3_TXDATAL, r16
+	
+	TX_complete:
+		cpi r16, 0x0A
+		breq main
+		rjmp TX_clear
+
+	rjmp main
