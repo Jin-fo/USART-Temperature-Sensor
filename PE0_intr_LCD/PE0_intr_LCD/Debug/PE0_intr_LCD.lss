@@ -1,0 +1,127 @@
+                                 ;*
+                                 ;* Title: Interrupt Driven Counting of Pushbutton Presses
+                                 ;* Author:				Jin Yuan Chen
+                                 ;* Version:				2.0
+                                 ;* Last updated:		
+                                 ;* Target:				AVR128DB48 @ 4.0MHz
+                                 ;*
+                                 ;* DESCRIPTION
+                                 ;* Uses a positive edge triggered pin change interrupt to count the number
+                                 ;* of times a pushbutton is pressed and display it on the LCD. The pushbutton is connected
+                                 ;* to PE0. The counts are stored in a byte memory variable. The counts is display through
+                                 ;* PB1 to SERLCD.
+                                 ;*
+                                 ;* VERSION HISTORY
+                                 ;* 1.0 Original version
+                                 ;***************************************************************************
+                                 
+                                 .dseg
+002800                           PB_count: .byte 1		;pushbutton presses count memory variable.
+                                 
+                                 .cseg					;start of code segment
+                                 reset:
+000000 940c 0048                  	jmp start			;reset vector executed a power ON
+                                 
+                                 .org PORTE_PORT_vect
+000046 940c 006b                 	jmp porte_isr		;vector for all PORTE pin change IRQs
+                                 
+                                 
+                                 start:
+                                 	;USART: baud rate
+000048 e803                      	ldi r16, LOW(1667)
+000049 9300 0868                 	sts USART3_BAUDL, r16
+00004b e006                      	ldi r16, HIGH(1667)
+00004c 9300 0869                 	sts USART3_BAUDH, r16
+                                 
+                                 	;USART: format
+00004e e003                      	ldi r16, 0x03
+00004f 9300 0867                 	sts USART3_CTRLC, r16
+                                 	
+                                 	;USART: TX
+000051 e400                      	ldi r16, 0x40
+000052 9300 0866                 	sts USART3_CTRLB, r16
+                                 
+                                     ; Configure I/O port
+000054 9a20                      	sbi VPORTB_DIR, 0	;PB0 USART output- send signal to LCD
+000055 9880                      	cbi VPORTE_DIR, 0	;PE0 input- gets output from pushbutton debouce ckt.
+                                 
+000056 e000                      	ldi r16, 0x00		;make initial count 0
+000057 9300 2800                 	sts PB_count, r16
+                                 
+                                 	;Configure interrupt
+000059 9100 0490                 	lds r16, PORTE_PIN0CTRL	;set ISC for PE0 to pos. edge
+00005b 6002                      	ori r16, 0x02
+00005c 9300 0490                 	sts PORTE_PIN0CTRL, r16
+                                 
+00005e 9478                      	sei					;enable global interrupts
+                                     
+                                 main_loop:				;main program loop
+                                 	//clear
+00005f e73c                      	ldi r19, '|'
+000060 d02a                      	rcall USART_TX
+000061 e23d                      	ldi r19, '-'
+000062 d028                      	rcall USART_TX
+                                 
+                                 	//conversion
+000063 9110 2800                 	lds r17, PB_count
+000065 d01b                      	rcall to_ASCII_hex
+                                 
+                                 	//transmite
+000066 2f32                      	mov r19, r18
+000067 d023                      	rcall USART_TX
+000068 2f31                      	mov r19, r17
+000069 d021                      	rcall USART_TX
+                                 
+00006a cff4                      	rjmp main_loop
+                                 
+                                 ;Interrupt service routine for any PORTE pin change IRQ
+                                 porte_ISR:
+00006b 94f8                      	cli				;clear global interrupt enable, I = 0
+00006c 930f                      	push r16		;save r16 then SREG, note I = 0
+00006d b70f                      	in r16, CPU_SREG
+00006e 930f                      	push r16
+                                 
+                                 	;Determine which pins of PORTE have IRQs
+00006f 9100 0489                 	lds r16, PORTE_INTFLAGS	;check for PE0 IRQ flag set
+000071 fd00                      	sbrc r16, 0
+000072 d005                      	rcall PB_sub			;execute subroutine for PE0
+                                 
+000073 910f                      	pop r16			;restore SREG then r16
+000074 bf0f                      	out CPU_SREG, r16	;note I in SREG now = 0
+000075 910f                      	pop r16
+000076 9478                      	sei				;SREG I = 1
+000077 9518                      	reti			;return from PORTE pin change ISR
+                                 ;Note: reti does not set I on an AVR128DB48
+                                 
+                                 ;Subroutine called by porte_ISR
+                                 PB_sub:				;PE0's task to be done
+000078 9100 2800                 	lds r16, PB_count		;get current count for PB
+00007a 9503                      	inc r16					;increment count
+00007b 9300 2800                 	sts PB_count, r16		;store new count
+00007d e001                      	ldi r16, PORT_INT0_bm	;clear IRQ flag for PE0, change to 0x01 for avr
+00007e 9300 0489                 	sts PORTE_INTFLAGS, r16
+000080 9508                      	ret
+                                 
+                                 to_ASCII_hex:
+000081 2f21                      	mov r18, r17
+                                 	//masking ms 4-bit to ascii
+000082 9526                      	lsr r18
+000083 9526                      	lsr r18
+000084 9526                      	lsr r18
+000085 9526                      	lsr r18
+000086 702f                      	andi r18, 0x0f
+000087 6320                      	ori r18, 0x30
+                                 	//masking ls 4-bit to ascii
+000088 701f                      	andi r17, 0x0f
+000089 6310                      	ori r17, 0x30
+00008a 9508                      	ret 
+                                 
+                                 USART_TX:
+                                 	TX_clear:
+00008b 9140 0864                 		lds r20, USART3_STATUS
+00008d ff45                      		sbrs r20, 5
+00008e cffc                      		rjmp TX_clear
+                                 
+00008f 9330 0862                 	sts USART3_TXDATAL, r19
+000091 9508                      	ret 
+                                 

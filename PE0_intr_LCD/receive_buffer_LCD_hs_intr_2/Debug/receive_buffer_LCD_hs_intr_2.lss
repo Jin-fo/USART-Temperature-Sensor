@@ -1,0 +1,100 @@
+                                 ;*
+                                 ;* Title: Recieve BUffer to LCD at High speed with interupt 
+                                 ;* Author:				Jin Yuan Chen
+                                 ;* Version:				1.0
+                                 ;* Last updated:		
+                                 ;* Target:				AVR128DB48 @ 4.0MHz
+                                 ;*
+                                 ;* DESCRIPTION
+                                 ;* Uses a positive edge triggered pin change interrupt to transmite signal recieved to LCD
+                                 ;*
+                                 ;* VERSION HISTORY
+                                 ;* 1.0 Original version
+                                 ;***************************************************************************
+                                 .dseg
+002800                           message: .byte 64
+                                 
+                                 .cseg					;start of code segment
+                                 reset:
+000000 940c 0032                  	jmp start			;reset vector executed a power ON
+                                 
+                                 .org PORTC_PORT_vect	;delay? let 1 complete character to recive before intrupte  
+000030 940c 0062                 	jmp portc_isr		;vector for all PORTE pin change IRQs
+                                 
+                                 
+                                 start:
+                                 	;USART: Buad rate typical
+000032 e803                      	ldi r16, low(1667)
+000033 9300 0868                 	sts USART3_BAUDL, r16
+000035 e006                      	ldi r16, high(1667)
+000036 9300 0869                 	sts USART3_BAUDH, r16
+                                 	;USART: Baud Rate highspeed
+000038 e80b                      	ldi r16, low(139)
+000039 9300 0828                 	sts USART1_BAUDL, r16
+00003b e000                      	ldi r16, high(139)
+00003c 9300 0829                 	sts USART1_BAUDH, r16        
+                                 	;USART: Formate
+00003e e003                      	ldi r16, 0x03
+00003f 9300 0867                 	sts USART3_CTRLC, r16
+000041 9300 0827                 	sts USART1_CTRLC, r16
+000043 e400                      	ldi r16, 0x40			;USART: TX
+000044 9300 0866                 	sts USART3_CTRLB, r16
+000046 e800                      	ldi r16, 0x80			;USART: RX
+000047 9300 0826                 	sts USART1_CTRLB, r16
+                                 
+000049 9a20                      	sbi VPORTB_DIR, 0		;output
+00004a 9841                      	cbi VPORTC_DIR, 1		;input
+                                 
+                                 	;Configure interrupt
+00004b 9100 0451                 	lds r16, PORTC_PIN1CTRL	;set ISC for PC0 to pos. edge
+00004d 6002                      	ori r16, 0x02			
+00004e 9300 0451                 	sts PORTC_PIN1CTRL, r16
+                                 
+000050 9478                      	sei						;enable global interrupts
+                                 main:
+000051 e0c0                      	ldi YL, low(message)
+000052 e2d8                      	ldi YH, high(message)
+                                 	
+                                 	USART_RX:
+000053 9100 0820                 	lds r16, USART1_RXDATAL
+000055 9309                      	st Y+, r16
+                                 
+                                 	RX_complete:
+000056 300a                      		cpi r16, 0x0A
+000057 f009                      		breq rest
+000058 cffa                      		rjmp USART_RX
+                                 
+                                 	rest:
+000059 e0c0                      	ldi YL, low(message)
+00005a e2d8                      	ldi YH, high(message)
+                                 
+                                 	USART_TX:
+00005b 9109                      	ld r16, Y+
+00005c 9300 0862                 	sts USART3_TXDATAL, r16
+                                 	
+                                 	TX_complete:
+00005e 300a                      		cpi r16, 0x0A
+00005f f389                      		breq main
+000060 cffa                      		rjmp USART_TX
+                                 
+000061 cfef                      	rjmp main
+                                 
+                                 
+                                 ;Interrupt service routine for any PORTE pin change IRQ
+                                 portc_ISR:
+000062 94f8                      	cli				;clear global interrupt enable, I = 0
+000063 930f                      	push r16		;save r16 then SREG, note I = 0
+000064 b70f                      	in r16, CPU_SREG
+000065 930f                      	push r16
+                                 
+                                 	;Determine which pins of PORTE have IRQs
+000066 9100 0449                 	lds r16, PORTC_INTFLAGS	;check for PC0 IRQ flag set
+000068 fd01                      	sbrc r16, 1
+000069 dff1                      	rcall USART_TX			;execute subroutine for PC0
+                                 
+00006a 910f                      	pop r16			;restore SREG then r16
+00006b bf0f                      	out CPU_SREG, r16	;note I in SREG now = 0
+00006c 910f                      	pop r16
+00006d 9478                      	sei				;SREG I = 1
+00006e 9518                      	reti			;return from PORTE pin change ISR
+                                 ;Note: reti does not set I on an AVR128DB48

@@ -1,0 +1,36 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega4809"</DEVICE>
+ <WORKING_DIR>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m4809def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\Debug\receive_buffer_LCD_hs_intr_2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>receive_buffer_LCD_hs_intr_2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>receive_buffer_LCD_hs_intr_2.map</FILE>
+  <FILE>receive_buffer_LCD_hs_intr_2.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <message><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>16</LINE></message>
+  <reset><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>19</LINE></reset>
+  <start><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>26</LINE></start>
+  <portc_isr><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>85</LINE></portc_isr>
+  <main><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>55</LINE></main>
+  <USART_RX><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>59</LINE></USART_RX>
+  <RX_complete><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>63</LINE></RX_complete>
+  <rest><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>68</LINE></rest>
+  <USART_TX><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>72</LINE></USART_TX>
+  <TX_complete><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\receive_buffer_LCD_hs_intr_2\main.asm</FILE><LINE>76</LINE></TX_complete>
+ </LABELS>
+</ASSEMBLER_INFO>

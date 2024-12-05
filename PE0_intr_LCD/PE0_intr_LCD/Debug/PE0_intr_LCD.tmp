@@ -1,0 +1,35 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega4809"</DEVICE>
+ <WORKING_DIR>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m4809def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\Debug\PE0_intr_LCD.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>PE0_intr_LCD.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>PE0_intr_LCD.map</FILE>
+  <FILE>PE0_intr_LCD.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <PB_count><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>20</LINE></PB_count>
+  <reset><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>23</LINE></reset>
+  <start><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>30</LINE></start>
+  <porte_isr><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>79</LINE></porte_isr>
+  <main_loop><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>59</LINE></main_loop>
+  <USART_TX><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>120</LINE></USART_TX>
+  <to_ASCII_hex><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>106</LINE></to_ASCII_hex>
+  <PB_sub><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>98</LINE></PB_sub>
+  <TX_clear><FILE>c:\users\jinyc\Documents\Atmel Studio\7.0\PE0_intr_LCD\PE0_intr_LCD\main.asm</FILE><LINE>121</LINE></TX_clear>
+ </LABELS>
+</ASSEMBLER_INFO>
