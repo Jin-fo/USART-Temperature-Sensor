@@ -64,13 +64,16 @@ main_loop:				;main program loop
 	rcall USART_TX
 
 	//conversion
-	lds r17, PB_count
+	lds r16, PB_count
+	ldi r17, 0x00
+	rcall bin16_to_BCD
+
 	rcall to_ASCII_hex
 
 	//transmite
-	mov r19, r18
+	mov r19, r23
 	rcall USART_TX
-	mov r19, r17
+	mov r19, r22
 	rcall USART_TX
 
 	rjmp main_loop
@@ -99,22 +102,22 @@ PB_sub:				;PE0's task to be done
 	lds r16, PB_count		;get current count for PB
 	inc r16					;increment count
 	sts PB_count, r16		;store new count
-	ldi r16, PORT_INT0_bm	;clear IRQ flag for PE0, change to 0x01 for avr
+	ldi r16, 0x01	;clear IRQ flag for PE0, change to 0x01 for avr
 	sts PORTE_INTFLAGS, r16
 	ret
 
 to_ASCII_hex:
-	mov r18, r17
 	//masking ms 4-bit to ascii
-	lsr r18
-	lsr r18
-	lsr r18
-	lsr r18
-	andi r18, 0x0f
-	ori r18, 0x30
+	mov r23, r22
+	lsr r23
+	lsr r23
+	lsr r23
+	lsr r23
+	andi r23, 0x0f
+	ori r23, 0x30
 	//masking ls 4-bit to ascii
-	andi r17, 0x0f
-	ori r17, 0x30
+	andi r22, 0x0f
+	ori r22, 0x30
 	ret 
 
 USART_TX:
@@ -127,5 +130,74 @@ USART_TX:
 	ret 
 
 
+bin16_to_BCD:
+	ldi r19, 0 ;high byte of divisor for div16u
+	ldi r18, 10 ;low byte of the divisor for div16u
 
+	rcall div16u ;divide original binary number by 10
+	mov r22, r14 ;result is BCD digit 0 (least significant digit)
+	rcall div16u ;divide result from first division by 10, gives digit 1
+	swap r14 ;swap digit 1 for packing
+	or r22, r14 ;pack
+
+	rcall div16u ;divide result from second division by 10, gives digit 2
+	mov r23, r14 ;place in r23
+	rcall div16u ;divide result from third division by 10, gives digit 3
+	swap r14 ;swap digit 3 for packing
+	or r23, r14 ;pack
+
+	rcall div16u ;divide result from fourth division by 10, gives digit 4
+	mov r24, r14 ;place in r24
+
+ret
+;Subroutine div16u is from Atmel application note AVR200
+;***************************************************************************
+;*
+;* "div16u" - 16/16 Bit Unsigned Division
+;*
+;* This subroutine divides the two 16-bit numbers
+;*# "dd16uH:dd16uL" (dividend) and "dv16uH:dv16uL" (divisor).
+;* The result is placed in "dres16uH:dres16uL" and the remainder in
+;* "drem16uH:drem16uL".
+;*  
+;* Number of words :19
+;* Number of cycles :235/251 (Min/Max)
+;* Low registers used :2 (drem16uL,drem16uH)
+;* High registers used  :5 (dres16uL/dd16uL,dres16uH/dd16uH,dv16uL,dv16uH,
+;*    dcnt16u)
+;*
+;***************************************************************************
+;***** Subroutine Register Variables
+.def drem16uL=r14
+.def drem16uH=r15
+.def dres16uL=r16
+.def dres16uH=r17
+.def dd16uL =r16
+.def dd16uH =r17
+.def dv16uL =r18
+.def dv16uH =r19
+.def dcnt16u =r20
+;***** Code
+div16u:
+	clr drem16uL			;clear remainder Low byte
+	sub drem16uH,drem16uH	;clear remainder High byte and carry
+	ldi dcnt16u,17			;init loop counter
+d16u_1:
+	rol dd16uL				;shift left dividend
+	rol dd16uH
+	dec dcnt16u				;decrement counter
+	brne d16u_2				;if done
+	ret						;return
+d16u_2:
+	rol drem16uL			;shift dividend into remainder
+	rol drem16uH
+	sub drem16uL,dv16uL		;remainder = remainder - divisor
+	sbc drem16uH,dv16uH		;
+	brcc d16u_3				;if result negative
+	add drem16uL,dv16uL		;restore remainder
+	adc drem16uH,dv16uH
+	clc						;clear carry to be shifted into result
+	rjmp d16u_1				;else
+d16u_3: sec					;set carry to be shifted into result
+	rjmp d16u_1
 	
