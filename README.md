@@ -1,4 +1,4 @@
-# High-Speed Temperature Sensor System using AVR128DB48
+# Temperature Sensor System using AVR128DB48
 
 ## Overview
 This project demonstrates a **multi-protocol temperature sensing system** implemented on the **AVR128DB48 microcontroller**. The system measures temperature using three different communication interfaces: **USART, SPI, and I²C**, each paired with a different temperature sensor and implementation approach.
