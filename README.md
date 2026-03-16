@@ -1,19 +1,17 @@
 # Temperature Sensor System using AVR128DB48
 
 ## Overview
-This project demonstrates a **multi-protocol temperature sensing system** implemented on the **AVR128DB48 microcontroller**. The system measures temperature using three different communication interfaces: **USART, SPI, and I²C**, each paired with a different temperature sensor and implementation approach.
+This project is a **collection of temperature sensing examples** for the **AVR128DB48 microcontroller**, demonstrating how to interface with different sensors using **USART, SPI, and I²C communication protocols**.
 
-The project highlights low-level embedded development techniques including **direct register configuration, peripheral control, and mixed-language programming using both AVR assembly and C**. Each communication protocol operates independently and demonstrates how the microcontroller interacts with different types of sensors (analog and digital).
+The system includes three implementations:
 
-Temperature readings from each implementation are displayed in real time on a **20×4 SerLCD**, providing a simple serial interface for monitoring sensor output.
+- **USART + ADC (AVR Assembly)** with **MCP9700A**  
+- **SPI (C/C++)** with **LM74**  
+- **I²C (C/C++)** with **LM75**
 
-The three implementations included in this project are:
+Each module operates independently and highlights **low-level embedded techniques**, including **direct register configuration, peripheral control, and mixed-language development (AVR assembly and C/C++)**. Temperature readings from all modules are displayed in real time on a **20×4 SerLCD**, providing a clear serial interface for monitoring sensor output.
 
-- **USART + ADC (AVR Assembly)**
-- **SPI (C/C++)**
-- **I²C (C/C++)**
-
-Together, these modules demonstrate how multiple communication peripherals on the AVR128DB48 can be used for **high-speed temperature acquisition, sensor interfacing, and serial display output**.
+Together, this collection demonstrates **high-speed temperature acquisition, sensor interfacing, and serial display output** across multiple communication protocols on the AVR128DB48.
 
 ---
 
