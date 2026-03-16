@@ -1,5 +1,5 @@
 # Temperature Sensor System using AVR128DB48
-
+![](Micro-controller.png)
 ## Overview
 This project is a **collection of temperature sensing examples** for the **AVR128DB48 microcontroller**, demonstrating how to interface with different sensors using **USART, SPI, and I²C communication protocols**.
 
