@@ -522,6 +522,6 @@ delay_1s:
 
 
 /*ESE280 Fall 2024
-<student’s name>
+<studentÂ’s name>
 Laboratory 09
 <shortened lab title>*/
