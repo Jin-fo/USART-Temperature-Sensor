@@ -1,5 +1,5 @@
 # Temperature Sensor System using AVR128DB48
-![](Micro-controller.png)
+
 ## Overview
 This project is a **collection of temperature sensing examples** for the **AVR128DB48 microcontroller**, demonstrating how to interface with different sensors using **USART, SPI, and I²C communication protocols**.
 
@@ -14,6 +14,7 @@ Each module operates independently and highlights **low-level embedded technique
 Together, this collection demonstrates **high-speed temperature acquisition, sensor interfacing, and serial display output** across multiple communication protocols on the AVR128DB48.
 
 ---
+![](Micro-controller.png)
 
 ## USART Temperature Sensor (AVR Assembly)
 
