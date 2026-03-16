@@ -8,8 +8,8 @@ The project highlights low-level embedded development techniques including **dir
 The three implementations included in this project are:
 
 - **USART + ADC (AVR Assembly)**
-- **SPI (C Implementation)**
-- **I²C (C Implementation)**
+- **SPI (C/C++)**
+- **I²C (C/C++)**
 
 Together, these modules demonstrate how multiple communication peripherals on the AVR128DB48 can be used for **high-speed temperature acquisition and sensor interfacing**.
 
