@@ -17,7 +17,7 @@ Together, these modules demonstrate how multiple communication peripherals on th
 
 ## USART Temperature Sensor (AVR Assembly)
 
-This implementation reads temperature from an **MCP9700A analog temperature sensor** using the **on-board ADC** of the AVR128DB48. The firmware is written entirely in **AVR assembly** to demonstrate low-level hardware control and efficient peripheral configuration.
+This implementation reads temperature from an **MCP9700A analog temperature sensor** using the **on-board ADC** of the AVR128DB48. The firmware is written entirely in **AVR assembly** to demonstrate low-level hardware control and the potential for highspeed interrupt driven implementation
 
 ### Operation
 1. The **MCP9700A** outputs an analog voltage proportional to temperature.
