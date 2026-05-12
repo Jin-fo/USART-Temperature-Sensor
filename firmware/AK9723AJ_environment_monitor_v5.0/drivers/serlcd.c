@@ -35,7 +35,8 @@
  * 3. Set again in TX ISR after completion
  * @endcode
  */
-volatile uint8_t tx_ready = 1;
+volatile uint8_t uart_ready = 1;
+volatile uint8_t spi_ready = 1;
 volatile uint16_t def_baud = 1667;
 /**
  * @brief USART2 Data Register Empty ISR.
@@ -44,7 +45,7 @@ volatile uint16_t def_baud = 1667;
  * Pseudo-logic:
  * @code
  * 1. Load next byte into TX register
- * 2. Mark transmission complete (tx_ready = 1)
+ * 2. Mark transmission complete (uart_ready = 1)
  * 3. Disable DRE interrupt until next byte
  * @endcode
  */
@@ -54,8 +55,14 @@ void USART2_SerLCD_clear(void);
 ISR(USART2_DRE_vect)
 {
     USART2.TXDATAL = tx_char;
-    tx_ready = 1;
+    uart_ready = 1;
     USART2.CTRLA &= ~USART_DREIE_bm;
+}
+
+ISR(SPI0_INT_vect)
+{
+	volatile uint8_t dummy = SPI0.DATA;  // clear interrupt flag
+	spi_ready = 1;
 }
 
 //=================================================================//
@@ -249,12 +256,22 @@ void USART2_SerLCD_page2()
  */
 void USART2_SerLCD_byte_write(char c)
 {
-    while (!tx_ready);
+    while (!uart_ready);
 
-    tx_ready = 0;
+    uart_ready = 0;
     tx_char = c;
 
     USART2.CTRLA |= USART_DREIE_bm;
+}
+
+void SPI_SerLCD_byte_write(char c)
+{
+	while (!spi_ready);
+
+	spi_ready = 0;
+	tx_char = c;
+
+	SPI0.DATA = tx_char;
 }
 
 void USART2_SerLCD_clear() {
